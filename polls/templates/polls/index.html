@@ -9,16 +9,19 @@
 
 <body>
 
-  {% if latest_question_list %}
-  <ul>
-    {% for question in latest_question_list %}
-    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-  </ul>
-  {% else %}
-  <p>No polls are available.</p>
-  {% endif %}
+  <h1 style="text-align: center;"> Welcome to My site! </h1>
+
+  <div style="text-align: left;">
+    {% if latest_question_list %}
+    <ul>
+      {% for question in latest_question_list %}
+      <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No polls are available.</p>
+    {% endif %}
+  </div>
 
 </body>
-
 </html>
